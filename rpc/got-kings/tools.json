@@ -1,0 +1,17 @@
+{
+  "Tools": [
+    {
+      "Repository": "github.com/golang/protobuf/protoc-gen-go",
+      "Commit": "b285ee9cfc6c881bb20c0d8dc73370ea9b9ec90f"
+    },
+    {
+      "Repository": "github.com/twitchtv/twirp/protoc-gen-twirp",
+      "Commit": "337e90237d72193bf7f9fa387b5b9946436b7733"
+    },
+    {
+      "Repository": "github.com/jmoiron/sqlx",
+      "Commit": "38398a30ed8516ffda617a04c822de09df8a3ec5"
+    }
+  ],
+  "RetoolVersion": "1.3.7"
+}

@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package janus.gameOfThronesData.gotKings;
+
+option go_package = "gotKings";
+
+service GotKings {
+
+  rpc GetCharacter(CharacterReq) returns (CharacterInfo);
+
+  rpc MakeKing(CharacterInfo) returns (BoolResult);
+
+  rpc ClashKings(Scenario) returns (GOTResult);
+
+  rpc GetHistory(BoolResult) returns (ScenarioResult);
+  
+}
+
+enum Type {
+    ATTACK = 0;
+    BARTER = 1;
+    CONVERT = 2;
+    PILLAGE = 3;
+    MARRY = 4;
+}
+message BoolResult {
+    bool Result = 1;
+}
+
+message CharacterReq {
+    string Name = 1;
+    string House = 2;
+    repeated string Keywords = 3;
+}
+
+message CharacterInfo {
+    string FullName = 1;
+    string Description = 2;
+    repeated string ConqueredLand = 3;
+    repeated string Alliances = 4;
+}
+
+message Scenario {
+  Type ScenarioType = 1;
+  repeated string Participants = 2;
+  int32 Aggressor = 3;
+}
+
+message ScenarioResult {
+    repeated GOTResult Results = 1;
+}
+
+message GOTResult {
+    int32 Winner = 1;
+    string ResultDescription = 2; 
+}
